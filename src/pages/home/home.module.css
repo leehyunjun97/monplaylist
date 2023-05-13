@@ -1,0 +1,101 @@
+.main {
+  text-align: center;
+  background-color: #272727;
+  height: 84.5vh;
+  box-sizing: border-box;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.main button {
+  box-shadow: 5px 5px 5px rgb(135, 91, 33);
+}
+
+.mainTitle {
+  color: rgb(247, 142, 4);
+  margin: 0px;
+  padding-top: 25px;
+}
+
+.mainFeeling {
+  width: 80%;
+  height: 25vh;
+  line-height: 25vh;
+  margin-top: 25px;
+  margin: auto;
+}
+
+.subFeeling {
+  width: 90%;
+  height: 25vh;
+  line-height: 25vh;
+  margin-top: 20px;
+  margin: auto;
+}
+
+.startFeeling {
+  width: 90%;
+  height: 25vh;
+  line-height: 25vh;
+  margin-top: 10px;
+  margin: auto;
+}
+
+.mainFeelingBtn {
+  width: 15%;
+  height: 50%;
+  margin: 15px;
+  font-size: 20px;
+  font-weight: 900;
+  background-color: rgb(247, 142, 4);
+  border: none;
+  border-radius: 8px;
+  transition: all 300ms ease;
+  cursor: pointer;
+}
+
+.subFeelingBtn {
+  width: 15%;
+  height: 50%;
+  margin: 15px;
+  font-size: 20px;
+  font-weight: 900;
+
+  background-color: rgb(242, 186, 114);
+  border: none;
+  border-radius: 8px;
+  transition: all 300ms ease;
+  cursor: pointer;
+}
+
+.startFeelingBtn {
+  width: 18%;
+  height: 28%;
+  font-size: 17px;
+  font-weight: 900;
+  background-color: #c08863;
+  color: aliceblue;
+  border: none;
+  border-radius: 8px;
+  transition: all 300ms ease;
+
+  cursor: pointer;
+}
+
+.isActive {
+  background-color: rgb(203, 93, 91);
+  box-shadow: 10px 5px 5px rgb(142, 137, 129);
+  color: rgba(245, 245, 245, 0.9);
+
+  transform: scale(1.1);
+}
+
+.passive {
+  color: rgba(245, 245, 245, 0.9);
+}
+
+.mainFeelingBtn:hover,
+.subFeelingBtn:hover,
+.startFeelingBtn:hover {
+  transform: scale(1.1);
+}
