@@ -9,12 +9,14 @@ import {
 } from '../../util/wantFeelingList';
 import styles from './home.module.css';
 import Button from '../../components/common/Button/Button';
-import { getMusicList } from '../../services/youtube/youtube';
+import { useNavigate } from 'react-router-dom';
 
 const ChooseEmotion = () => {
   const [chooseEmotionState, setChooseEmotionState] =
     useRecoilState(chooseEmotion);
   const [subListState, setSubListState] = useState([]);
+
+  const navigate = useNavigate();
 
   const feelingClickHandler = (item) => {
     setChooseEmotionState({
@@ -51,24 +53,6 @@ const ChooseEmotion = () => {
 
       default:
         return [];
-    }
-  };
-
-  const startHandler = async () => {
-    const params = {
-      key: process.env.REACT_APP_YOUTUBE_KEY,
-      part: 'snippet',
-      q: `${chooseEmotionState.text} ${chooseEmotionState.subList.text} 플레이리스트`,
-      maxResults: 12,
-      type: 'video',
-      videoDuration: 'long',
-    };
-
-    try {
-      const getComplet = await getMusicList(params);
-      console.log(getComplet);
-    } catch (error) {
-      console.log(error);
     }
   };
 
@@ -114,7 +98,7 @@ const ChooseEmotion = () => {
           <Button
             text={'START'}
             className={styles.startFeelingBtn}
-            // onClick={startHandler}
+            onClick={() => navigate('/playlist')}
           />
         )}
       </div>

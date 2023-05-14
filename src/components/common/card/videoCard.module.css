@@ -1,0 +1,42 @@
+li {
+  color: aliceblue;
+  list-style-type: none;
+  margin-right: 10%;
+  margin-bottom: 10%;
+}
+
+p {
+  margin: 0;
+}
+
+.videoContent {
+  text-align: left;
+}
+
+.title {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.channelTitle {
+  font-size: small;
+  opacity: 0.6;
+}
+
+.publishedAt {
+  font-size: small;
+  opacity: 0.6;
+}
+
+.videoImg {
+  width: 100%;
+  cursor: pointer;
+  border-radius: 15px;
+  transition: all 300ms ease;
+}
+
+.videoImg:hover {
+  border-radius: 0px;
+}

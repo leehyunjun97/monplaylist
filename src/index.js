@@ -4,6 +4,8 @@ import App from './App';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Home from './pages/home/index';
 import { RecoilRoot } from 'recoil';
+import Playlist from './pages/playlist';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 const router = createBrowserRouter([
   {
@@ -14,14 +16,22 @@ const router = createBrowserRouter([
         index: true,
         element: <Home />,
       },
+      {
+        path: 'playlist',
+        element: <Playlist />,
+      },
     ],
   },
 ]);
 
+const queryClient = new QueryClient();
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <RecoilRoot>
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   </RecoilRoot>
   // <React.StrictMode>
 

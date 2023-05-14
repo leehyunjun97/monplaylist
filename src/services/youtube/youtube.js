@@ -6,6 +6,7 @@ const getMusicList = async (params) => {
       'https://www.googleapis.com/youtube/v3/search',
       { params }
     );
+    console.log('api 불러지는지 확인용');
     return getComplet.data;
   } catch (error) {
     throw new Error(error.message);

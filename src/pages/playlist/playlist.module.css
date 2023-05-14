@@ -1,0 +1,28 @@
+.main {
+  text-align: center;
+  background-color: #272727;
+  height: 84.5vh;
+  box-sizing: border-box;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  overflow: scroll;
+  padding: 8%;
+  padding-top: 0px;
+}
+
+.main::-webkit-scrollbar {
+  display: none;
+}
+
+.mainTitle {
+  color: rgb(247, 142, 4);
+  margin: 0px;
+  padding-top: 25px;
+}
+
+.relatedListUl {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* grid-template-rows: 50px; */
+  justify-content: space-around;
+}
