@@ -1,15 +1,20 @@
 import React from 'react';
 import styles from './header.module.css';
+import { useRecoilValue } from 'recoil';
+import { chooseEmotion } from '../../recoil/emotion/emotion';
 
-const header = () => {
+const Header = () => {
+  const chooseEmotionValue = useRecoilValue(chooseEmotion);
+
   return (
     <div className={styles.header}>
       <button className={styles.headerTitle}>MONPLAYLIST</button>
       <div className={styles.headerBtnSection}>
+        {chooseEmotionValue && <button>따른거 들을래잉</button>}
         <button>MYPLAYLIST</button>
         <button>SEARCH</button>
       </div>
     </div>
   );
 };
-export default header;
+export default Header;

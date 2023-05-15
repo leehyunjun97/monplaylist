@@ -15,14 +15,16 @@ p {
 
 .title {
   font-weight: bold;
-  text-align: center;
   margin-top: 15px;
   margin-bottom: 10px;
+  opacity: 0.9;
+  line-height: 19px;
 }
 
 .channelTitle {
   font-size: small;
   opacity: 0.6;
+  margin-bottom: 5px;
 }
 
 .publishedAt {

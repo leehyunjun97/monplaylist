@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useRecoilState } from 'recoil';
+import React, { useEffect, useState } from 'react';
+import { useRecoilState, useResetRecoilState } from 'recoil';
 import { chooseEmotion } from '../../recoil/emotion/emotion';
 import {
   excitingList,
@@ -15,6 +15,11 @@ const ChooseEmotion = () => {
   const [chooseEmotionState, setChooseEmotionState] =
     useRecoilState(chooseEmotion);
   const [subListState, setSubListState] = useState([]);
+  const chooseEmotionReset = useResetRecoilState(chooseEmotion);
+
+  useEffect(() => {
+    chooseEmotionReset();
+  }, [chooseEmotionReset]);
 
   const navigate = useNavigate();
 
@@ -55,6 +60,8 @@ const ChooseEmotion = () => {
         return [];
     }
   };
+
+  console.log(chooseEmotionState);
 
   return (
     <div>

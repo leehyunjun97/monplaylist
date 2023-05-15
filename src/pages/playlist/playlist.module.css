@@ -18,11 +18,11 @@
   color: rgb(247, 142, 4);
   margin: 0px;
   padding-top: 25px;
+  margin-bottom: 30px;
 }
 
 .relatedListUl {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  /* grid-template-rows: 50px; */
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: space-around;
 }
