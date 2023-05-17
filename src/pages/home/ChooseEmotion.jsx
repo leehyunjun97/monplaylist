@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useRecoilState, useResetRecoilState } from 'recoil';
-import { chooseEmotion } from '../../recoil/emotion/emotion';
+import { chooseEmotion, subEmotionList } from '../../recoil/emotion/emotion';
 import {
   excitingList,
   feelingMusicList,
@@ -14,7 +14,8 @@ import { useNavigate } from 'react-router-dom';
 const ChooseEmotion = () => {
   const [chooseEmotionState, setChooseEmotionState] =
     useRecoilState(chooseEmotion);
-  const [subListState, setSubListState] = useState([]);
+  const [subEmotionListState, setSubEmotionList] =
+    useRecoilState(subEmotionList);
   const chooseEmotionReset = useResetRecoilState(chooseEmotion);
 
   useEffect(() => {
@@ -47,21 +48,19 @@ const ChooseEmotion = () => {
   const viewSubListHandler = (id) => {
     switch (id) {
       case 1:
-        setSubListState(excitingList);
+        setSubEmotionList(excitingList);
         break;
       case 2:
-        setSubListState(quietList);
+        setSubEmotionList(quietList);
         break;
       case 3:
-        setSubListState(weatherList);
+        setSubEmotionList(weatherList);
         break;
 
       default:
         return [];
     }
   };
-
-  console.log(chooseEmotionState);
 
   return (
     <div>
@@ -85,7 +84,7 @@ const ChooseEmotion = () => {
       </div>
 
       <div className={styles.subFeeling}>
-        {subListState.map((item) => (
+        {subEmotionListState.map((item) => (
           <Button
             key={item.id}
             text={item.text}

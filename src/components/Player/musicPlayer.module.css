@@ -1,0 +1,57 @@
+.playerBar {
+  background-color: rgb(247, 142, 4);
+  opacity: 0.9;
+  width: 600px;
+  height: 55px;
+  position: fixed;
+  bottom: 30px;
+  display: flex;
+  align-items: center;
+  left: 20%;
+  justify-content: space-between;
+  padding-left: 2%;
+  padding-right: 2%;
+  border-radius: 25px;
+}
+
+.playerContent {
+  display: block;
+  width: 200px;
+  text-align: left;
+  line-height: 22px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.playerBar img {
+  background-color: transparent;
+  border-radius: 50px;
+  width: 85px;
+  height: 85px;
+}
+
+.playerTitle {
+  font-weight: bold;
+  font-size: 13px;
+  color: #272727;
+  text-overflow: ellipsis;
+}
+
+.playerChnnel {
+  font-weight: bold;
+  opacity: 0.6;
+  font-size: 8px;
+}
+
+.playerVolume {
+  background-color: '#ececec';
+  accent-color: #272727;
+}
+
+.startBtn {
+  background-color: transparent;
+  border: none;
+  height: 80%;
+  cursor: pointer;
+}

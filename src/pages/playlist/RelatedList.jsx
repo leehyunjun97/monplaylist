@@ -38,6 +38,10 @@ const RelatedList = () => {
       <ul className={styles.relatedListUl}>
         {!isLoading &&
           data &&
+
+          
+
+
           data.map((video) => (
             <VideoCard key={video.id.videoId} video={video} />
           ))}

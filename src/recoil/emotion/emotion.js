@@ -3,7 +3,7 @@ import { recoilPersist } from 'recoil-persist';
 
 const { persistAtom } = recoilPersist();
 
-export const chooseEmotion = atom({
+const chooseEmotion = atom({
   key: '#chooseEmotion',
   default: {
     id: '',
@@ -15,3 +15,12 @@ export const chooseEmotion = atom({
   },
   effects_UNSTABLE: [persistAtom],
 });
+
+const subEmotionList = atom({
+  key: '#subEmotionList',
+  default: [],
+});
+
+
+
+export { chooseEmotion, subEmotionList };
