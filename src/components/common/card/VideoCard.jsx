@@ -8,8 +8,6 @@ const VideoCard = ({ video }) => {
   const { title, thumbnails, channelTitle, publishedAt } = video.snippet;
   const setPlayingMusicState = useSetRecoilState(playingMusic);
 
-  console.log(video);
-
   return (
     <li>
       <img

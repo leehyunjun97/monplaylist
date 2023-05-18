@@ -1,7 +1,8 @@
 li {
   color: aliceblue;
   list-style-type: none;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   margin-bottom: 10%;
 }
 
@@ -17,7 +18,7 @@ p {
   font-weight: bold;
   margin-top: 15px;
   margin-bottom: 10px;
-  opacity: 0.9;
+  opacity: 0.85;
   line-height: 19px;
 }
 

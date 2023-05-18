@@ -19,8 +19,7 @@ const chooseEmotion = atom({
 const subEmotionList = atom({
   key: '#subEmotionList',
   default: [],
+  effects_UNSTABLE: [persistAtom],
 });
-
-
 
 export { chooseEmotion, subEmotionList };

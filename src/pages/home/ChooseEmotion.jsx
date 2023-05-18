@@ -17,10 +17,12 @@ const ChooseEmotion = () => {
   const [subEmotionListState, setSubEmotionList] =
     useRecoilState(subEmotionList);
   const chooseEmotionReset = useResetRecoilState(chooseEmotion);
+  const subListReset = useResetRecoilState(subEmotionList);
 
   useEffect(() => {
     chooseEmotionReset();
-  }, [chooseEmotionReset]);
+    subListReset();
+  }, [chooseEmotionReset, subListReset]);
 
   const navigate = useNavigate();
 

@@ -1,12 +1,17 @@
 import { useQuery } from 'react-query';
-import { useRecoilValue } from 'recoil';
-import { chooseEmotion } from '../../recoil/emotion/emotion';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { chooseEmotion, subEmotionList } from '../../recoil/emotion/emotion';
 import { getMusicList } from '../../services/youtube/youtube';
 import VideoCard from '../../components/common/card/VideoCard';
 import styles from './playlist.module.css';
+import Button from '../../components/common/Button/Button';
 
 const RelatedList = () => {
-  const chooseEmotionState = useRecoilValue(chooseEmotion);
+  const [chooseEmotionState, setChooseEmotionState] =
+    useRecoilState(chooseEmotion);
+  const subEmotionListState = useRecoilValue(subEmotionList);
+
+  console.log(chooseEmotionState);
 
   const { data, isLoading } = useQuery(
     ['getMusicList', chooseEmotionState],
@@ -34,14 +39,23 @@ const RelatedList = () => {
 
   return (
     <>
+      <div className={styles.subListSection}>
+        {subEmotionListState.map((subList) => (
+          <Button
+            key={subList.id}
+            text={subList.text}
+            className={styles.subListBtn}
+            onClick={() => {
+              setChooseEmotionState({ ...chooseEmotionState, subList });
+            }}
+          />
+        ))}
+      </div>
       {isLoading && <p style={{ color: 'white' }}>Loading...</p>}
+
       <ul className={styles.relatedListUl}>
         {!isLoading &&
           data &&
-
-          
-
-
           data.map((video) => (
             <VideoCard key={video.id.videoId} video={video} />
           ))}
