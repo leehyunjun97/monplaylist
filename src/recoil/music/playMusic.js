@@ -48,6 +48,12 @@ const playingMusicState = atom({
     isPause: false,
     volume: 0.1,
   },
+  effects_UNSTABLE: [persistAtom],
 });
 
-export { playingMusic, playingMusicState };
+const favoriteMusic = atom({
+  key: '#favoriteMusic',
+  default: [],
+});
+
+export { playingMusic, playingMusicState, favoriteMusic };

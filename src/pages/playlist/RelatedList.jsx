@@ -11,8 +11,6 @@ const RelatedList = () => {
     useRecoilState(chooseEmotion);
   const subEmotionListState = useRecoilValue(subEmotionList);
 
-  console.log(chooseEmotionState);
-
   const { data, isLoading } = useQuery(
     ['getMusicList', chooseEmotionState],
     async () => {
@@ -34,7 +32,7 @@ const RelatedList = () => {
       useErrorBoundary: true,
       cacheTime: 5 * 10 * 1000,
       staleTime: 5 * 10 * 1000,
-    }
+    },
   );
 
   return (
@@ -44,7 +42,11 @@ const RelatedList = () => {
           <Button
             key={subList.id}
             text={subList.text}
-            className={styles.subListBtn}
+            className={
+              subList.text === chooseEmotionState.subList.text
+                ? styles.subListBtn_active
+                : styles.subListBtn
+            }
             onClick={() => {
               setChooseEmotionState({ ...chooseEmotionState, subList });
             }}

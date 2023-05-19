@@ -4,6 +4,9 @@ li {
   margin-left: 5%;
   margin-right: 5%;
   margin-bottom: 10%;
+  background-color: #292929;
+  border-radius: 21px;
+  padding: 5px;
 }
 
 p {
@@ -31,6 +34,28 @@ p {
 .publishedAt {
   font-size: small;
   opacity: 0.6;
+}
+
+.videoImgSection {
+  position: relative;
+}
+
+.favoriteBtn {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  right: 4px;
+  top: 5px;
+  cursor: pointer;
+}
+
+.favoriteIcon {
+  color: aliceblue;
+  opacity: 0.9;
+}
+
+.favoriteIcon_active {
+  color: crimson;
 }
 
 .videoImg {

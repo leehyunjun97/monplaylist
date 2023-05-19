@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useRecoilState, useResetRecoilState } from 'recoil';
+
+import { useRecoilState} from 'recoil';
 import { chooseEmotion, subEmotionList } from '../../recoil/emotion/emotion';
 import {
   excitingList,
@@ -16,13 +16,7 @@ const ChooseEmotion = () => {
     useRecoilState(chooseEmotion);
   const [subEmotionListState, setSubEmotionList] =
     useRecoilState(subEmotionList);
-  const chooseEmotionReset = useResetRecoilState(chooseEmotion);
-  const subListReset = useResetRecoilState(subEmotionList);
-
-  useEffect(() => {
-    chooseEmotionReset();
-    subListReset();
-  }, [chooseEmotionReset, subListReset]);
+  
 
   const navigate = useNavigate();
 

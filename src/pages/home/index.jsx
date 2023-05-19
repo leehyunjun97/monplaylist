@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './home.module.css';
 import ChooseEmotion from './ChooseEmotion';
 import Text from '../../components/common/Text/Text';
+import { useResetRecoilState } from 'recoil';
+import { chooseEmotion, subEmotionList } from '../../recoil/emotion/emotion';
 
-const main = () => {
+const Main = () => {
+  const chooseEmotionReset = useResetRecoilState(chooseEmotion);
+  const subListReset = useResetRecoilState(subEmotionList);
+
+  useEffect(() => {
+    chooseEmotionReset();
+    subListReset();
+  }, [chooseEmotionReset, subListReset]);
   return (
     <div className={styles.main}>
       <Text.Title className={styles.mainTitle}>
@@ -14,4 +23,4 @@ const main = () => {
   );
 };
 
-export default main;
+export default Main;

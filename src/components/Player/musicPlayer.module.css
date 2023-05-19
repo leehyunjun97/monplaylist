@@ -1,5 +1,5 @@
 .playerBar {
-  background-color: rgb(247, 142, 4);
+  background-color: rgb(231 163 74);
   opacity: 0.9;
   width: 600px;
   height: 55px;
@@ -16,26 +16,27 @@
 
 .playerContent {
   display: block;
-  width: 200px;
+  width: 230px;
   text-align: left;
   line-height: 22px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  
 }
 
 .playerBar img {
   background-color: transparent;
   border-radius: 50px;
-  width: 85px;
-  height: 85px;
+  width: 75px;
+  height: 75px;
 }
 
 .playerTitle {
   font-weight: bold;
   font-size: 13px;
-  color: #272727;
+  color: #000000;
+  white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
+  opacity: 0.83;
 }
 
 .playerChnnel {
