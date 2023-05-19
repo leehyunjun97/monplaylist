@@ -12,6 +12,7 @@
   padding-left: 2%;
   padding-right: 2%;
   border-radius: 25px;
+  box-shadow: 5px 5px 5px rgb(188 145 84);
 }
 
 .playerContent {
@@ -19,7 +20,6 @@
   width: 230px;
   text-align: left;
   line-height: 22px;
-  
 }
 
 .playerBar img {
@@ -27,6 +27,7 @@
   border-radius: 50px;
   width: 75px;
   height: 75px;
+  box-shadow: 5px 5px 16px 3px rgb(83 74 57);
 }
 
 .playerTitle {
