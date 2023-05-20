@@ -5,6 +5,7 @@ import { getMusicList } from '../../services/youtube/youtube';
 import VideoCard from '../../components/common/card/VideoCard';
 import styles from './playlist.module.css';
 import Button from '../../components/common/Button/Button';
+import Loding from '../../components/common/Loding/Loding';
 
 const RelatedList = () => {
   const [chooseEmotionState, setChooseEmotionState] =
@@ -32,7 +33,7 @@ const RelatedList = () => {
       useErrorBoundary: true,
       cacheTime: 5 * 10 * 1000,
       staleTime: 5 * 10 * 1000,
-    },
+    }
   );
 
   return (
@@ -53,7 +54,7 @@ const RelatedList = () => {
           />
         ))}
       </div>
-      {isLoading && <p style={{ color: 'white' }}>Loading...</p>}
+      {isLoading && <Loding />}
 
       <ul className={styles.relatedListUl}>
         {!isLoading &&
