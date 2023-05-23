@@ -3,13 +3,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { formatAgo } from '../../../util/date';
 import { useSetRecoilState } from 'recoil';
-import { favoriteMusic, playingMusic } from '../../../recoil/music/playMusic';
+import {
+  favoriteMusic,
+  playingMusic,
+  playingMusicState,
+} from '../../../recoil/music/playMusic';
 import { useEffect, useState } from 'react';
 import Modal from '../Modal/Modal';
 
 const VideoCard = ({ video }) => {
   const { title, thumbnails, channelTitle, publishedAt } = video.snippet;
   const setPlayingMusicState = useSetRecoilState(playingMusic);
+  const setMusicState = useSetRecoilState(playingMusicState);
   const setFavoriteMusicState = useSetRecoilState(favoriteMusic);
   const [isModal, setIsModal] = useState({
     isbool: false,
@@ -69,6 +74,7 @@ const VideoCard = ({ video }) => {
           alt={title}
           onClick={() => {
             setPlayingMusicState(video);
+            setMusicState((prev) => ({ ...prev, isPause: true }));
           }}
         />
         <button

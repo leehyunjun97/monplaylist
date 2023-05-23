@@ -7,6 +7,7 @@ import { RecoilRoot } from 'recoil';
 import Playlist from './pages/playlist';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import MyPlayList from './pages/myPlaylist';
+import OtherSearch from './pages/otherSearch';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: 'myPlaylist',
         element: <MyPlayList />,
+      },
+      {
+        path: 'search',
+        element: <OtherSearch />,
       },
     ],
   },

@@ -9,12 +9,13 @@ const MusicPlayer = () => {
   const [musicState, setMusicState] = useRecoilState(playingMusicState);
   const music = useRecoilValue(playingMusic);
 
+  console.log(musicState.isPause);
   return (
     <div className={styles.playerBar}>
       <Player
         video={music.id.videoId ? music.id.videoId : null}
         volume={musicState.volume}
-        paused={musicState.isPause}
+        paused={!musicState.isPause}
         autoplay
         style={{ display: 'none' }}
       />
@@ -52,7 +53,7 @@ const MusicPlayer = () => {
         }}
       >
         <FontAwesomeIcon
-          icon={musicState.isPause ? faPlay : faPause}
+          icon={musicState.isPause ? faPause : faPlay}
           size='2xl'
         />
       </button>

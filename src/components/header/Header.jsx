@@ -31,6 +31,7 @@ const Header = () => {
             />
           }
           text={'SEARCH'}
+          onClick={() => navigate('/search')}
         />
       </div>
     </div>
