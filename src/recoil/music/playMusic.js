@@ -51,9 +51,4 @@ const playingMusicState = atom({
   effects_UNSTABLE: [persistAtom],
 });
 
-const favoriteMusic = atom({
-  key: '#favoriteMusic',
-  default: [],
-});
-
-export { playingMusic, playingMusicState, favoriteMusic };
+export { playingMusic, playingMusicState};

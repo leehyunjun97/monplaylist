@@ -4,64 +4,62 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { formatAgo } from '../../../util/date';
 import { useSetRecoilState } from 'recoil';
 import {
-  favoriteMusic,
   playingMusic,
   playingMusicState,
 } from '../../../recoil/music/playMusic';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Modal from '../Modal/Modal';
 
 const VideoCard = ({ video }) => {
   const { title, thumbnails, channelTitle, publishedAt } = video.snippet;
   const setPlayingMusicState = useSetRecoilState(playingMusic);
   const setMusicState = useSetRecoilState(playingMusicState);
-  const setFavoriteMusicState = useSetRecoilState(favoriteMusic);
   const [isModal, setIsModal] = useState({
     isbool: false,
     text: '',
   });
-
-  const getFavoritItem = JSON.parse(localStorage.getItem('favoriteMusic'));
-
-  const isfa =
-    getFavoritItem?.filter((item) => item.id.videoId === video.id.videoId)
-      .length > 0;
+  const [isfa, setIsfa] = useState(false);
+  const getFavoritItem = useMemo(() => {
+    return JSON.parse(localStorage.getItem('favoriteMusic')) || [];
+  }, []);
 
   useEffect(() => {
     if (isModal.isbool) {
-      console.log(isModal.isbool);
       const timer = setTimeout(() => {
         setIsModal({ ...isModal, isbool: false });
       }, 1300);
       return () => clearTimeout(timer);
     }
-  }, [isModal]);
+
+    if (
+      getFavoritItem?.filter((item) => item.id.videoId === video.id.videoId)
+        .length > 0
+    ) {
+      setIsfa(true);
+    }
+  }, [getFavoritItem, isModal, video.id.videoId]);
 
   const favoriteHandler = () => {
-    const list = [...getFavoritItem];
-
-    if (!isfa) {
-      list.push(video);
-      setFavoriteMusicState((prev) => ({ ...prev, video }));
-      localStorage.setItem('favoriteMusic', JSON.stringify(list));
-      setIsModal({ isbool: true, text: '좋아요가 추가되었습니다.' });
-      return;
+    if (isfa) {
+      setIsfa(false);
+      setIsModal({ text: '삭제되었습니다', isbool: true });
+      localStorage.setItem('favoriteMusic', JSON.stringify(removeMyPlaylist()));
+    } else {
+      setMyPlaylist(video);
     }
+  };
 
-    if (list.length === 0) return;
+  const setMyPlaylist = async (video) => {
+    setIsfa(true);
+    setIsModal({ text: '리스트에 추가되었습니다', isbool: true });
+    await getFavoritItem.push(video);
+    localStorage.setItem('favoriteMusic', JSON.stringify(getFavoritItem));
+  };
 
-    setFavoriteMusicState(
-      list.filter((item) => item.id.videoId !== video.id.videoId)
+  const removeMyPlaylist = () => {
+    return getFavoritItem.filter(
+      (item) => item.id.videoId !== video.id.videoId
     );
-    localStorage.setItem(
-      'favoriteMusic',
-      JSON.stringify(
-        list.filter((item) => item.id.videoId !== video.id.videoId)
-      )
-    );
-    setIsModal({ isbool: true, text: '좋아요가 삭제되었습니다.' });
-
-    return;
   };
 
   return (

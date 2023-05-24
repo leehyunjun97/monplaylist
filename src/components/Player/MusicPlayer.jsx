@@ -9,7 +9,6 @@ const MusicPlayer = () => {
   const [musicState, setMusicState] = useRecoilState(playingMusicState);
   const music = useRecoilValue(playingMusic);
 
-  console.log(musicState.isPause);
   return (
     <div className={styles.playerBar}>
       <Player
