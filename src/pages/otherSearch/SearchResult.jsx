@@ -46,10 +46,16 @@ const SearchResult = () => {
           onClick={() => setSearch(searchInputState)}
         />
         <input
+          placeholder='PLAYLIST'
           className={styles.searchInput}
           type='text'
           value={searchInputState}
           onChange={(e) => setSearhInputState(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              setSearch(searchInputState);
+            }
+          }}
         />
         {searchInputState && (
           <FontAwesomeIcon
