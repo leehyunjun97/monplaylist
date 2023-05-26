@@ -20,7 +20,7 @@ const Header = () => {
           icon={
             <FontAwesomeIcon icon={faHeart} style={{ marginRight: '6px' }} />
           }
-          text={'MYPLAYLIST'}
+          text={<span className={styles.headerSpan}>MYPLAYLIST</span>}
           onClick={() => navigate('/myPlaylist')}
         />
         <Button
@@ -30,7 +30,7 @@ const Header = () => {
               style={{ marginRight: '6px' }}
             />
           }
-          text={'SEARCH'}
+          text={<span className={styles.headerSpan}>SEARCH</span>}
           onClick={() => navigate('/search')}
         />
       </div>

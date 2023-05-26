@@ -42,7 +42,8 @@
 }
 
 .mainFeelingBtn {
-  width: 15%;
+  /* width: 15%; */
+  width: 180px;
   height: 50%;
   margin: 15px;
   font-size: 20px;
@@ -56,11 +57,11 @@
 
 .subFeelingBtn {
   width: 15%;
+  /* width: 180px; */
   height: 50%;
   margin: 15px;
   font-size: 20px;
   font-weight: 900;
-
   background-color: rgb(242, 186, 114);
   border: none;
   border-radius: 8px;
@@ -98,4 +99,37 @@
 .subFeelingBtn:hover,
 .startFeelingBtn:hover {
   transform: scale(1.1);
+}
+
+@media (max-width: 900px) {
+  .mainFeelingBtn {
+    width: 25%;
+  }
+}
+
+@media (max-width: 700px) {
+  .mainFeelingBtn {
+    font-size: 3vw;
+  }
+  .subFeelingBtn {
+    width: 25%;
+    font-size: 3vw;
+  }
+}
+
+@media (max-width: 500px) {
+  .mainFeeling,
+  .subFeeling {
+    width: 100%;
+  }
+  .mainFeelingBtn {
+    width: 25%;
+    height: 60px;
+    font-size: 3vw;
+  }
+  .subFeelingBtn {
+    width: 25%;
+    height: 60px;
+    font-size: 3vw;
+  }
 }

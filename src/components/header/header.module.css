@@ -41,3 +41,18 @@ button:hover {
   cursor: pointer;
   margin-right: 15px;
 }
+
+@media (max-width: 500px) {
+  .headerSpan {
+    display: none;
+  }
+  .headerBtnSection button {
+    margin-right: 5px;
+    font-size: 17px;
+  }
+
+  .headerTitle {
+    margin-left: 5px;
+    font-size: 20px;
+  }
+}

@@ -57,3 +57,22 @@
   height: 80%;
   cursor: pointer;
 }
+
+@media (max-width: 900px) {
+  .playerBar {
+    width: 85%;
+    left: 5%;
+  }
+  .playerContent {
+    width: 50%;
+  }
+}
+
+@media (max-width: 650px) {
+  .playerContent {
+    width: 40%;
+  }
+  .playerVolume {
+    width: 20%;
+  }
+}
