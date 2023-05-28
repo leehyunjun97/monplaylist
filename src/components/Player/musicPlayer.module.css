@@ -75,4 +75,7 @@
   .playerVolume {
     width: 20%;
   }
+  .playerTitle {
+    font-size: 12px;
+  }
 }

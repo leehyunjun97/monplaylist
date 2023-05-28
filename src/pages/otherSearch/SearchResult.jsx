@@ -60,7 +60,14 @@ const SearchResult = () => {
         {searchInputState && (
           <FontAwesomeIcon
             icon={faXmark}
-            style={{ marginLeft: '15px', opacity: '0.7', cursor: 'pointer' }}
+            style={{
+              marginLeft: '15px',
+              opacity: '0.7',
+              cursor: 'pointer',
+              position: 'absolute',
+              right: '14px',
+              top: '13px',
+            }}
             size='lg'
             onClick={() => setSearhInputState('')}
           />

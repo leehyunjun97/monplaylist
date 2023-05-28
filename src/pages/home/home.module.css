@@ -70,7 +70,7 @@
 }
 
 .startFeelingBtn {
-  width: 18%;
+  width: 200px;
   height: 28%;
   font-size: 17px;
   font-weight: 900;
@@ -102,18 +102,28 @@
 }
 
 @media (max-width: 900px) {
+  .mainFeeling,
+  .subFeeling {
+    font-size: 2.8vw;
+  }
   .mainFeelingBtn {
     width: 25%;
   }
 }
 
 @media (max-width: 700px) {
+  .subFeeling {
+    width: 100%;
+    line-height: 13vh;
+  }
   .mainFeelingBtn {
-    font-size: 3vw;
+    font-size: 2.5vw;
+    height: 80px;
   }
   .subFeelingBtn {
-    width: 25%;
-    font-size: 3vw;
+    width: 14vw;
+    height: 80px;
+    font-size: 2.5vw;
   }
 }
 
@@ -123,13 +133,15 @@
     width: 100%;
   }
   .mainFeelingBtn {
-    width: 25%;
+    width: 20vw;
     height: 60px;
     font-size: 3vw;
   }
   .subFeelingBtn {
-    width: 25%;
     height: 60px;
-    font-size: 3vw;
+    font-size: 2.5vw;
+  }
+  .mainTitle {
+    font-size: 16px;
   }
 }

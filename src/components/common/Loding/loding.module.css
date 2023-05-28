@@ -1,0 +1,22 @@
+.lodingSpnnerImg {
+  width: 5%;
+  margin-top: 60px;
+}
+
+@media (max-width: 1000px) {
+  .lodingSpnnerImg {
+    width: 8%;
+  }
+}
+
+@media (max-width: 700px) {
+  .lodingSpnnerImg {
+    width: 12%;
+  }
+}
+
+@media (max-width: 500px) {
+  .lodingSpnnerImg {
+    width: 15%;
+  }
+}

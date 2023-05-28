@@ -1,10 +1,11 @@
 import React from 'react';
 import Spnner from './Spinner.gif';
+import styles from './loding.module.css';
 
 const Loding = () => {
   return (
     <>
-      <img src={Spnner} alt='' width={'5%'} style={{ marginTop: '60px' }} />
+      <img src={Spnner} alt=''  className={styles.lodingSpnnerImg}/>
     </>
   );
 };

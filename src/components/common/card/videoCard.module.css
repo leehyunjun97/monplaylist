@@ -23,6 +23,12 @@ p {
   margin-bottom: 10px;
   opacity: 0.85;
   line-height: 19px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .channelTitle {
@@ -67,4 +73,10 @@ p {
 
 .videoImg:hover {
   border-radius: 0px;
+}
+
+@media (max-width: 500px) {
+  li {
+    padding: 0px;
+  }
 }

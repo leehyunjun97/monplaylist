@@ -6,7 +6,7 @@
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   overflow: scroll;
-  padding: 8%;
+  padding: 5%;
   padding-top: 0px;
 }
 
@@ -65,4 +65,31 @@
 .subListBtn:hover {
   opacity: 0.9;
   border-radius: 20px;
+}
+
+@media (max-width: 1000px) {
+  .main {
+    padding: 2%;
+  }
+  .relatedListUl {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .relatedListUl {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .relatedListUl {
+    grid-template-columns: 1fr;
+  }
+  .mainTitle {
+    font-size: 14px;
+  }
+  .subListBtn {
+    font-size: 2.5vw;
+  }
 }

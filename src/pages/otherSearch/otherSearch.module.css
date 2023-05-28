@@ -6,7 +6,7 @@
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   overflow: scroll;
-  padding: 8%;
+  padding: 5%;
   padding-top: 0px;
 }
 
@@ -22,6 +22,7 @@
 }
 
 .searchInputSection {
+  position: relative;
   width: 600px;
   height: 50px;
   background-color: #d8d3cf;
@@ -54,4 +55,34 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: space-around;
   padding-left: 0px;
+}
+
+@media (max-width: 1000px) {
+  .main {
+    padding: 2%;
+  }
+  .relatedListUl {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .relatedListUl {
+    grid-template-columns: 1fr 1fr;
+  }
+  .searchInputSection {
+    width: 90%;
+  }
+  .searchInput {
+    width: 85%;
+  }
+}
+
+@media (max-width: 500px) {
+  .relatedListUl {
+    grid-template-columns: 1fr;
+  }
+  .mainTitle {
+    font-size: 16px;
+  }
 }
