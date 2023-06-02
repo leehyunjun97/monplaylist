@@ -14,7 +14,7 @@ const SearchResult = () => {
   const [search, setSearch] = useRecoilState(playlistSearch);
 
   const { data, isLoading } = useQuery(
-    ['getMusicList', search],
+    ['getSearchList', search],
     async () => {
       const params = {
         key: process.env.REACT_APP_YOUTUBE_KEY,
@@ -24,7 +24,7 @@ const SearchResult = () => {
         type: 'video',
         videoDuration: 'long',
       };
-
+      
       const a = await getMusicList(params);
       return a.items;
     },
