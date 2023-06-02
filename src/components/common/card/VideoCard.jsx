@@ -2,13 +2,14 @@ import styles from './videoCard.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { formatAgo } from '../../../util/date';
-import { useSetRecoilState } from 'recoil';
+import { useRecoilState, useSetRecoilState } from 'recoil';
 import {
   playingMusic,
   playingMusicState,
 } from '../../../recoil/music/playMusic';
-import { useEffect, useMemo, useState } from 'react';
+import { useState } from 'react';
 import Modal from '../Modal/Modal';
+import { favoriteMusicAtom } from '../../../recoil/music/favoriteMusic';
 
 const VideoCard = ({ video }) => {
   const { title, thumbnails, channelTitle, publishedAt } = video.snippet;
@@ -18,47 +19,18 @@ const VideoCard = ({ video }) => {
     isbool: false,
     text: '',
   });
-  const [isfa, setIsfa] = useState(false);
-  const getFavoritItem = useMemo(() => {
-    return JSON.parse(localStorage.getItem('favoriteMusic')) || [];
-  }, []);
+  const [favoriteMusicState, setFavoriteMusicState] =
+    useRecoilState(favoriteMusicAtom);
 
-  useEffect(() => {
-    if (isModal.isbool) {
-      const timer = setTimeout(() => {
-        setIsModal({ ...isModal, isbool: false });
-      }, 1300);
-      return () => clearTimeout(timer);
-    }
-
-    if (
-      getFavoritItem?.filter((item) => item.id.videoId === video.id.videoId)
-        .length > 0
-    ) {
-      setIsfa(true);
-    }
-  }, [getFavoritItem, isModal, video.id.videoId]);
-
-  const favoriteHandler = () => {
-    if (isfa) {
-      setIsfa(false);
-      setIsModal({ text: '삭제되었습니다', isbool: true });
-      localStorage.setItem('favoriteMusic', JSON.stringify(removeMyPlaylist()));
-    } else {
-      setMyPlaylist(video);
-    }
+  const isFavoriteItem = (id) => {
+    return favoriteMusicState.filter((item) => item.id.videoId === id);
   };
 
-  const setMyPlaylist = async (video) => {
-    setIsfa(true);
-    setIsModal({ text: '리스트에 추가되었습니다', isbool: true });
-    await getFavoritItem.push(video);
-    localStorage.setItem('favoriteMusic', JSON.stringify(getFavoritItem));
-  };
-
-  const removeMyPlaylist = () => {
-    return getFavoritItem.filter(
-      (item) => item.id.videoId !== video.id.videoId
+  const addFavoriteHandler = () => {
+    setFavoriteMusicState((prev) => [...prev, video]);
+    localStorage.setItem(
+      'favoriteMusic',
+      JSON.stringify([...favoriteMusicState, video])
     );
   };
 
@@ -75,12 +47,13 @@ const VideoCard = ({ video }) => {
             setMusicState((prev) => ({ ...prev, isPause: true }));
           }}
         />
-        <button
-          className={styles.favoriteBtn}
-          onClick={() => favoriteHandler()}
-        >
+        <button className={styles.favoriteBtn} onClick={addFavoriteHandler}>
           <FontAwesomeIcon
-            className={!isfa ? styles.favoriteIcon : styles.favoriteIcon_active}
+            className={
+              isFavoriteItem(video.id.videoId).length === 0
+                ? styles.favoriteIcon
+                : styles.favoriteIcon_active
+            }
             icon={faHeart}
             size='xl'
           />

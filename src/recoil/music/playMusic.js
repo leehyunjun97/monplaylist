@@ -51,4 +51,4 @@ const playingMusicState = atom({
   effects_UNSTABLE: [persistAtom],
 });
 
-export { playingMusic, playingMusicState};
+export { playingMusic, playingMusicState };
