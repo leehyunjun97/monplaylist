@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './modal.module.css';
 import Text from '../Text/Text';
+import styles from './toast.module.css';
 
-const Modal = ({ text }) => {
+const Toast = ({ text }) => {
   return (
     <div className={styles.modalSection1}>
       <div className={styles.modalSection2}>
@@ -12,4 +12,4 @@ const Modal = ({ text }) => {
   );
 };
 
-export default Modal;
+export default Toast;

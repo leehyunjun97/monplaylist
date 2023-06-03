@@ -1,14 +1,16 @@
 import Player from '@u-wave/react-youtube';
 import styles from './musicPlayer.module.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPause, faPlay } from '@fortawesome/free-solid-svg-icons';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { playingMusic, playingMusicState } from '../../recoil/music/playMusic';
+import Button from '../common/Button/Button';
+import Text from '../common/Text/Text';
+import Input from '../common/Input/Input';
 
 const MusicPlayer = () => {
   const [musicState, setMusicState] = useRecoilState(playingMusicState);
   const music = useRecoilValue(playingMusic);
-
+  
   return (
     <div className={styles.playerBar}>
       <Player
@@ -19,43 +21,47 @@ const MusicPlayer = () => {
         style={{ display: 'none' }}
       />
 
-      <img src={music.snippet.thumbnails.medium.url} alt='' />
+      {music.id.videoId && (
+        <img src={music.snippet.thumbnails.medium.url} alt='' />
+      )}
 
       <div className={styles.playerContent}>
-        {music ? (
+        {music.id.videoId ? (
           <>
-            <p className={styles.playerTitle}>{music.snippet.title}</p>
-            <p className={styles.playerChnnel}>{music.snippet.channelTitle}</p>
+            <Text
+              className={styles.playerTitle}
+              children={music.snippet.title}
+            />
+            <Text
+              className={styles.playerChnnel}
+              children={music.snippet.channelTitle}
+            />
           </>
         ) : (
-          <p>재생목록이 없습니다.</p>
+          <Text className={`${styles.playerTitle} ${styles.playerTitleEmpty}`} children={'재생 목록 없음'} />
         )}
       </div>
 
-      <input
+      <Input.Range
         className={styles.playerVolume}
-        type='range'
         min={0}
         max={1}
         step={0.02}
         value={musicState.volume}
-        color='white'
+        color={'white'}
         onChange={(e) =>
           setMusicState({ ...musicState, volume: e.target.valueAsNumber })
         }
       />
 
-      <button
+      <Button.IconBtn
         className={styles.startBtn}
+        icon={musicState.isPause ? faPause : faPlay}
+        size={'2xl'}
         onClick={() => {
           setMusicState({ ...musicState, isPause: !musicState.isPause });
         }}
-      >
-        <FontAwesomeIcon
-          icon={musicState.isPause ? faPause : faPlay}
-          size='2xl'
-        />
-      </button>
+      />
     </div>
   );
 };

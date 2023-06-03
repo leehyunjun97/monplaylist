@@ -1,7 +1,4 @@
 import { atom } from 'recoil';
-import { recoilPersist } from 'recoil-persist';
-
-const { persistAtom } = recoilPersist();
 
 const playingMusic = atom({
   key: '#playingMusic',
@@ -39,7 +36,6 @@ const playingMusic = atom({
       publishTime: '',
     },
   },
-  effects_UNSTABLE: [persistAtom],
 });
 
 const playingMusicState = atom({
@@ -48,7 +44,6 @@ const playingMusicState = atom({
     isPause: false,
     volume: 0.1,
   },
-  effects_UNSTABLE: [persistAtom],
 });
 
-export { playingMusic, playingMusicState};
+export { playingMusic, playingMusicState };

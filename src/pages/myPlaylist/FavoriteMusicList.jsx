@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './myPlaylist.module.css';
-import VideoCard from '../../components/common/card/VideoCard';
+import VideoCard from '../../components/common/Card/VideoCard';
 
 const FavoriteMusicList = () => {
   const favorite = JSON.parse(localStorage.getItem('favoriteMusic'));

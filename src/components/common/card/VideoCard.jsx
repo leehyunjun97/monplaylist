@@ -1,5 +1,4 @@
 import styles from './videoCard.module.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { formatAgo } from '../../../util/date';
 import { useSetRecoilState } from 'recoil';
@@ -8,13 +7,15 @@ import {
   playingMusicState,
 } from '../../../recoil/music/playMusic';
 import { useEffect, useMemo, useState } from 'react';
-import Modal from '../Modal/Modal';
+import Button from '../Button/Button';
+import Text from '../Text/Text';
+import Toast from '../Toast/Toast';
 
 const VideoCard = ({ video }) => {
   const { title, thumbnails, channelTitle, publishedAt } = video.snippet;
   const setPlayingMusicState = useSetRecoilState(playingMusic);
   const setMusicState = useSetRecoilState(playingMusicState);
-  const [isModal, setIsModal] = useState({
+  const [isToast, setIsToast] = useState({
     isbool: false,
     text: '',
   });
@@ -24,9 +25,9 @@ const VideoCard = ({ video }) => {
   }, []);
 
   useEffect(() => {
-    if (isModal.isbool) {
+    if (isToast.isbool) {
       const timer = setTimeout(() => {
-        setIsModal({ ...isModal, isbool: false });
+        setIsToast({ ...isToast, isbool: false });
       }, 1300);
       return () => clearTimeout(timer);
     }
@@ -37,12 +38,12 @@ const VideoCard = ({ video }) => {
     ) {
       setIsfa(true);
     }
-  }, [getFavoritItem, isModal, video.id.videoId]);
+  }, [getFavoritItem, isToast, video.id.videoId]);
 
   const favoriteHandler = () => {
     if (isfa) {
       setIsfa(false);
-      setIsModal({ text: '삭제되었습니다', isbool: true });
+      setIsToast({ text: '삭제되었습니다', isbool: true });
       localStorage.setItem('favoriteMusic', JSON.stringify(removeMyPlaylist()));
     } else {
       setMyPlaylist(video);
@@ -51,7 +52,7 @@ const VideoCard = ({ video }) => {
 
   const setMyPlaylist = async (video) => {
     setIsfa(true);
-    setIsModal({ text: '리스트에 추가되었습니다', isbool: true });
+    setIsToast({ text: '리스트에 추가되었습니다', isbool: true });
     await getFavoritItem.push(video);
     localStorage.setItem('favoriteMusic', JSON.stringify(getFavoritItem));
   };
@@ -64,7 +65,7 @@ const VideoCard = ({ video }) => {
 
   return (
     <li>
-      {isModal.isbool && <Modal text={isModal.text} />}
+      {isToast.isbool && <Toast text={isToast.text} />}
       <div className={styles.videoImgSection}>
         <img
           className={styles.videoImg}
@@ -75,21 +76,24 @@ const VideoCard = ({ video }) => {
             setMusicState((prev) => ({ ...prev, isPause: true }));
           }}
         />
-        <button
+
+        <Button.IconBtn
           className={styles.favoriteBtn}
-          onClick={() => favoriteHandler()}
-        >
-          <FontAwesomeIcon
-            className={!isfa ? styles.favoriteIcon : styles.favoriteIcon_active}
-            icon={faHeart}
-            size='xl'
-          />
-        </button>
+          icon={faHeart}
+          iconClassName={
+            !isfa ? styles.favoriteIcon : styles.favoriteIcon_active
+          }
+          size={'xl'}
+          onClick={favoriteHandler}
+        />
       </div>
       <div className={styles.videoContent}>
-        <p className={styles.title}>{title}</p>
-        <p className={styles.channelTitle}>{channelTitle}</p>
-        <p className={styles.publishedAt}>{formatAgo(publishedAt, 'ko')}</p>
+        <Text className={styles.title} children={title} />
+        <Text className={styles.channelTitle} children={channelTitle} />
+        <Text
+          className={styles.publishedAt}
+          children={formatAgo(publishedAt, 'ko')}
+        />
       </div>
     </li>
   );

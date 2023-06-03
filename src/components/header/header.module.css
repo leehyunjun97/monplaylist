@@ -42,6 +42,10 @@ button:hover {
   margin-right: 15px;
 }
 
+.headerIcon {
+  margin-right: 6px;
+}
+
 @media (max-width: 500px) {
   .headerSpan {
     display: none;

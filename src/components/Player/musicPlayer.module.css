@@ -40,6 +40,11 @@
   opacity: 0.83;
 }
 
+.playerTitleEmpty {
+  font-size: 15px;
+  text-align: center;
+}
+
 .playerChnnel {
   font-weight: bold;
   opacity: 0.6;

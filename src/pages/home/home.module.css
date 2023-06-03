@@ -42,7 +42,6 @@
 }
 
 .mainFeelingBtn {
-  /* width: 15%; */
   width: 180px;
   height: 50%;
   margin: 15px;
@@ -57,7 +56,6 @@
 
 .subFeelingBtn {
   width: 15%;
-  /* width: 180px; */
   height: 50%;
   margin: 15px;
   font-size: 20px;

@@ -1,5 +1,4 @@
-
-import { useRecoilState} from 'recoil';
+import { useRecoilState } from 'recoil';
 import { chooseEmotion, subEmotionList } from '../../recoil/emotion/emotion';
 import {
   excitingList,
@@ -16,7 +15,6 @@ const ChooseEmotion = () => {
     useRecoilState(chooseEmotion);
   const [subEmotionListState, setSubEmotionList] =
     useRecoilState(subEmotionList);
-  
 
   const navigate = useNavigate();
 
@@ -58,6 +56,10 @@ const ChooseEmotion = () => {
     }
   };
 
+  const isActiveHandler = (text, itemText) => {
+    return text === itemText ? styles.isActive : styles.passive;
+  };
+
   return (
     <div>
       <div className={styles.mainFeeling}>
@@ -68,12 +70,10 @@ const ChooseEmotion = () => {
               feelingClickHandler(item);
               viewSubListHandler(item.id);
             }}
-            className={[
-              chooseEmotionState.text === item.text
-                ? styles.isActive
-                : styles.passive,
-              styles.mainFeelingBtn,
-            ].join(' ')}
+            className={`${isActiveHandler(
+              chooseEmotionState.text,
+              item.text
+            )} ${styles.mainFeelingBtn}`}
             text={item.text}
           />
         ))}
@@ -84,12 +84,10 @@ const ChooseEmotion = () => {
           <Button
             key={item.id}
             text={item.text}
-            className={[
-              chooseEmotionState.subList.text === item.text
-                ? styles.isActive
-                : styles.passive,
-              styles.subFeelingBtn,
-            ].join(' ')}
+            className={`${isActiveHandler(
+              chooseEmotionState.subList.text,
+              item.text
+            )} ${styles.subFeelingBtn}`}
             onClick={() => subFeelingClickHandler(item)}
           />
         ))}
