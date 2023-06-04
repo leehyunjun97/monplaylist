@@ -1,15 +1,16 @@
 import styles from './videoCard.module.css';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { formatAgo } from '../../../util/date';
-import { useSetRecoilState } from 'recoil';
+import { useRecoilState, useSetRecoilState } from 'recoil';
 import {
   playingMusic,
   playingMusicState,
 } from '../../../recoil/music/playMusic';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from '../Button/Button';
 import Text from '../Text/Text';
 import Toast from '../Toast/Toast';
+import { favoriteMusicList } from '../../../recoil/music/favoriteMusic';
 
 const VideoCard = ({ video }) => {
   const { title, thumbnails, channelTitle, publishedAt } = video.snippet;
@@ -19,10 +20,8 @@ const VideoCard = ({ video }) => {
     isbool: false,
     text: '',
   });
-  const [isfa, setIsfa] = useState(false);
-  const getFavoritItem = useMemo(() => {
-    return JSON.parse(localStorage.getItem('favoriteMusic')) || [];
-  }, []);
+  const [favoriteMusicState, setFavoriteMusicState] =
+    useRecoilState(favoriteMusicList);
 
   useEffect(() => {
     if (isToast.isbool) {
@@ -31,35 +30,38 @@ const VideoCard = ({ video }) => {
       }, 1300);
       return () => clearTimeout(timer);
     }
-
-    if (
-      getFavoritItem?.filter((item) => item.id.videoId === video.id.videoId)
-        .length > 0
-    ) {
-      setIsfa(true);
-    }
-  }, [getFavoritItem, isToast, video.id.videoId]);
+  }, [isToast]);
 
   const favoriteHandler = () => {
-    if (isfa) {
-      setIsfa(false);
-      setIsToast({ text: '삭제되었습니다', isbool: true });
-      localStorage.setItem('favoriteMusic', JSON.stringify(removeMyPlaylist()));
+    if (isFavoriteHandler(video.id.videoId)) {
+      setMyPlaylist();
     } else {
-      setMyPlaylist(video);
+      removeMyPlaylist();
     }
   };
 
-  const setMyPlaylist = async (video) => {
-    setIsfa(true);
-    setIsToast({ text: '리스트에 추가되었습니다', isbool: true });
-    await getFavoritItem.push(video);
-    localStorage.setItem('favoriteMusic', JSON.stringify(getFavoritItem));
+  const setMyPlaylist = () => {
+    setFavoriteMusicState((prev) => [...prev, video]);
+    localStorage.setItem(
+      'favoriteMusic',
+      JSON.stringify([...favoriteMusicState, video])
+    );
+    setIsToast({ isbool: true, text: '리스트에 추가되었습니다' });
   };
 
   const removeMyPlaylist = () => {
-    return getFavoritItem.filter(
+    const removeList = favoriteMusicState.filter(
       (item) => item.id.videoId !== video.id.videoId
+    );
+
+    setFavoriteMusicState(removeList);
+    localStorage.setItem('favoriteMusic', JSON.stringify(removeList));
+    setIsToast({ isbool: true, text: '리스트에 삭제되었습니다' });
+  };
+
+  const isFavoriteHandler = (id) => {
+    return (
+      favoriteMusicState.filter((item) => item.id.videoId === id).length === 0
     );
   };
 
@@ -81,7 +83,9 @@ const VideoCard = ({ video }) => {
           className={styles.favoriteBtn}
           icon={faHeart}
           iconClassName={
-            !isfa ? styles.favoriteIcon : styles.favoriteIcon_active
+            isFavoriteHandler(video.id.videoId)
+              ? styles.favoriteIcon
+              : styles.favoriteIcon_active
           }
           size={'xl'}
           onClick={favoriteHandler}

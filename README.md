@@ -13,13 +13,12 @@
    input common 따로 관리
    playerbar 로컬 스토리지에 저장 안하기
    customHooks 만들어서 query 관리
-
-mount unMount 애니메이션 적용 (아직 안함)
+   mount unMount 애니메이션 적용
 
 <!-- 7. console.log 다 지워주세요. -->
 
 <!-- 8. 전역적으로 관리가 필요없는 state 다시 작성해주세요. -->
 
-9. 좋아요 싫어요 다시 작성
+<!-- 9. 좋아요 싫어요 다시 작성 -->
 
 10. style 파일도 다시 정리
