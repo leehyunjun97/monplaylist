@@ -1,10 +1,10 @@
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { chooseEmotion, subEmotionList } from '../../recoil/emotion/emotion';
-import VideoCard from '../../components/common/Card/VideoCard';
 import styles from './playlist.module.css';
 import Button from '../../components/common/Button/Button';
 import Loding from '../../components/common/Loding/Loding';
 import { useFetchMusicList } from '../../hooks/useFetchMusicList';
+import VideoListUl from '../../components/common/Ul/VideoListUl';
 
 const RelatedList = () => {
   const [chooseEmotionState, setChooseEmotionState] =
@@ -36,13 +36,7 @@ const RelatedList = () => {
       </div>
       {isLoading && <Loding />}
 
-      <ul className={styles.relatedListUl}>
-        {!isLoading &&
-          data &&
-          data.map((video) => (
-            <VideoCard key={video.id.videoId} video={video} />
-          ))}
-      </ul>
+      {!isLoading && <VideoListUl list={data} />}
     </>
   );
 };

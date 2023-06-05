@@ -21,13 +21,6 @@
   margin-bottom: 30px;
 }
 
-.relatedListUl {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-content: space-around;
-  padding-left: 0px;
-}
-
 .subListSection {
   display: flex;
   margin: auto;
@@ -71,21 +64,9 @@
   .main {
     padding: 2%;
   }
-  .relatedListUl {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-@media (max-width: 700px) {
-  .relatedListUl {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 @media (max-width: 500px) {
-  .relatedListUl {
-    grid-template-columns: 1fr;
-  }
   .mainTitle {
     font-size: 14px;
   }

@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import styles from './otherSearch.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faXmark } from '@fortawesome/free-solid-svg-icons';
-import VideoCard from '../../components/common/Card/VideoCard';
 import Loding from '../../components/common/Loding/Loding';
 import { useSetRecoilState } from 'recoil';
 import { playlistSearch } from '../../recoil/search/search';
 import Input from '../../components/common/Input/Input';
 import { useFetchSearchList } from '../../hooks/useFetchSearchList';
+import VideoListUl from '../../components/common/Ul/VideoListUl';
 
 const SearchResult = () => {
   const [searchInputState, setSearhInputState] = useState('');
@@ -47,13 +47,7 @@ const SearchResult = () => {
       </div>
       {isLoading && <Loding />}
 
-      <ul className={styles.relatedListUl}>
-        {!isLoading &&
-          data &&
-          data.map((video) => (
-            <VideoCard key={video.id.videoId} video={video} />
-          ))}
-      </ul>
+      {!isLoading && <VideoListUl list={data} />}
     </>
   );
 };
