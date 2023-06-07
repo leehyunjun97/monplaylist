@@ -3,6 +3,6 @@ from = "/*"
 to = "/index.html"
 status = 200
 
-[[build]]
+[build]
 publish = "build"
 command = "CI= npm run build"
