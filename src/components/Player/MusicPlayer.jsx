@@ -1,5 +1,5 @@
 import Player from '@u-wave/react-youtube';
-import styles from './musicPlayer.module.css';
+import styles from './style/musicPlayer.module.css';
 import { faPause, faPlay } from '@fortawesome/free-solid-svg-icons';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { playingMusic, playingMusicState } from '../../recoil/music/playMusic';
@@ -10,7 +10,7 @@ import Input from '../common/Input/Input';
 const MusicPlayer = () => {
   const [musicState, setMusicState] = useRecoilState(playingMusicState);
   const music = useRecoilValue(playingMusic);
-  
+
   return (
     <div className={styles.playerBar}>
       <Player
@@ -38,7 +38,10 @@ const MusicPlayer = () => {
             />
           </>
         ) : (
-          <Text className={`${styles.playerTitle} ${styles.playerTitleEmpty}`} children={'재생 목록 없음'} />
+          <Text
+            className={`${styles.playerTitle} ${styles.playerTitleEmpty}`}
+            children={'재생 목록 없음'}
+          />
         )}
       </div>
 

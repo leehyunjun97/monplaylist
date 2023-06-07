@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './modal.module.css';
+import styles from './style/modal.module.css';
 import Text from '../Text/Text';
 
 const Modal = ({ text }) => {

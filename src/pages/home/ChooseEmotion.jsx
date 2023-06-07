@@ -6,7 +6,7 @@ import {
   quietList,
   weatherList,
 } from '../../util/wantFeelingList';
-import styles from './home.module.css';
+import styles from './style/home.module.css';
 import Button from '../../components/common/Button/Button';
 import { useNavigate } from 'react-router-dom';
 

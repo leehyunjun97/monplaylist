@@ -1,6 +1,6 @@
 import React from 'react';
 import Spnner from '../../../assets/images/Spinner.gif';
-import styles from './loding.module.css';
+import styles from './style/loding.module.css';
 
 const Loding = () => {
   return (

@@ -1,4 +1,4 @@
-import styles from './videoCard.module.css';
+import styles from './style/videoCard.module.css';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { formatAgo } from '../../../util/date';
 import { useRecoilState, useSetRecoilState } from 'recoil';

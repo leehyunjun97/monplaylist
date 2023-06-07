@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './otherSearch.module.css';
+import styles from './style/otherSearch.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faXmark } from '@fortawesome/free-solid-svg-icons';
 import Loding from '../../components/common/Loding/Loding';

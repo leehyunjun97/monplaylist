@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './otherSearch.module.css';
+import styles from './style/otherSearch.module.css';
 import Text from '../../components/common/Text/Text';
 import SearchResult from './SearchResult';
 import { useRecoilValue } from 'recoil';

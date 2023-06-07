@@ -10,7 +10,7 @@
 <!-- 5. 사진같은거 등 코드와 관련이 없는 것들은 assets 파일로 따로 빼주세요. (디렉터리 구조 다시 잡으세요. assets - images - Spinner.gif) 이런식으로 -->
 
 6. 코드 마음에 안들었던거 다시 리팩토링 해보고 그거 readme에다가 노트로 적어서 어디를 수정했는지 한번 대충 적어보기
-   input common 따로 관리
+   input, ul 컴포넌트 따로 관리
    playerbar 로컬 스토리지에 저장 안하기
    customHooks 만들어서 query 관리
    mount unMount 애니메이션 적용

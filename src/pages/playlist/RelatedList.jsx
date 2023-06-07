@@ -1,6 +1,6 @@
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { chooseEmotion, subEmotionList } from '../../recoil/emotion/emotion';
-import styles from './playlist.module.css';
+import styles from './style/playlist.module.css';
 import Button from '../../components/common/Button/Button';
 import Loding from '../../components/common/Loding/Loding';
 import { useFetchMusicList } from '../../hooks/useFetchMusicList';

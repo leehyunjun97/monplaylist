@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './header.module.css';
+import styles from './style/header.module.css';
 import { useNavigate } from 'react-router-dom';
 import Button from '../common/Button/Button';
 import { faHeart, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';

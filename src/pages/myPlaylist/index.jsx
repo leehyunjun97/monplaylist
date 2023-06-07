@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './myPlaylist.module.css';
+import styles from './style/myPlaylist.module.css';
 import Text from '../../components/common/Text/Text';
 import FavoriteMusicList from './FavoriteMusicList';
 

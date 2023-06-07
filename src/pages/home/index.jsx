@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import styles from './home.module.css';
+import styles from './style/home.module.css';
 import ChooseEmotion from './ChooseEmotion';
 import Text from '../../components/common/Text/Text';
 import { useResetRecoilState } from 'recoil';

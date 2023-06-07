@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import RelatedList from './RelatedList';
-import styles from './playlist.module.css';
+import styles from './style/playlist.module.css';
 import Text from '../../components/common/Text/Text';
 import { useNavigate } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';

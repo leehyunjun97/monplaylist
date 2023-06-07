@@ -1,6 +1,6 @@
 import React from 'react';
 import VideoCard from '../Card/VideoCard';
-import styles from './videoListUl.module.css';
+import styles from './style/videoListUl.module.css';
 
 const VideoListUl = ({ list }) => {
   return (
