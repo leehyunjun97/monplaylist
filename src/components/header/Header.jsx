@@ -2,10 +2,17 @@ import React from 'react';
 import styles from './style/header.module.css';
 import { useNavigate } from 'react-router-dom';
 import Button from '../common/Button/Button';
-import { faHeart, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import {
+  faHeart,
+  faMagnifyingGlass,
+  faListUl,
+} from '@fortawesome/free-solid-svg-icons';
+import { useRecoilValue } from 'recoil';
+import { chooseEmotion } from '../../recoil/emotion/emotion';
 
 const Header = () => {
   const navigate = useNavigate();
+  const chooseEmotionState = useRecoilValue(chooseEmotion);
 
   return (
     <div className={styles.header}>
@@ -15,6 +22,17 @@ const Header = () => {
         onClick={() => navigate('/')}
       />
       <div className={styles.headerBtnSection}>
+        <Button.IconBtn
+          text={<span className={styles.headerSpan}>RESULT</span>}
+          icon={faListUl}
+          iconClassName={styles.headerIcon}
+          onClick={() => {
+            if (chooseEmotionState.subList.text) {
+              navigate('/playlist');
+            }
+          }}
+        />
+
         <Button.IconBtn
           text={<span className={styles.headerSpan}>MYPLAYLIST</span>}
           icon={faHeart}
