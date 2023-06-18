@@ -5,6 +5,7 @@ import Button from '../../components/common/Button/Button';
 import Loding from '../../components/common/Loding/Loding';
 import { useFetchMusicList } from '../../hooks/useFetchMusicList';
 import VideoListUl from '../../components/common/Ul/VideoListUl';
+import { IFeelingList } from '../../types/feelingList';
 
 const RelatedList = () => {
   const [chooseEmotionState, setChooseEmotionState] =
@@ -13,14 +14,14 @@ const RelatedList = () => {
 
   const { data, isLoading } = useFetchMusicList();
 
-  const isActiveHandler = (text, stateText) => {
+  const isActiveHandler = (text: string, stateText: string) => {
     return text === stateText ? styles.subListBtn_active : styles.subListBtn;
   };
 
   return (
     <>
       <div className={styles.subListSection}>
-        {subEmotionListState.map((subList) => (
+        {subEmotionListState.map((subList: IFeelingList) => (
           <Button
             key={subList.id}
             text={subList.text}

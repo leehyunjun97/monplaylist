@@ -13,6 +13,7 @@ const Main = () => {
     chooseEmotionReset();
     subListReset();
   }, [chooseEmotionReset, subListReset]);
+
   return (
     <div className={styles.main}>
       <Text.Title className={styles.mainTitle}>

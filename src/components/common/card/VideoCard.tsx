@@ -11,8 +11,13 @@ import Button from '../Button/Button';
 import Text from '../Text/Text';
 import Toast from '../Toast/Toast';
 import { favoriteMusicList } from '../../../recoil/music/favoriteMusic';
+import { IVideo } from '../../../types/video';
 
-const VideoCard = ({ video }) => {
+interface IProps {
+  video: IVideo;
+}
+
+const VideoCard = ({ video }: IProps) => {
   const { title, thumbnails, channelTitle, publishedAt } = video.snippet;
   const setPlayingMusicState = useSetRecoilState(playingMusic);
   const setMusicState = useSetRecoilState(playingMusicState);
@@ -59,7 +64,7 @@ const VideoCard = ({ video }) => {
     setIsToast({ isbool: true, text: '리스트에 삭제되었습니다' });
   };
 
-  const isFavoriteHandler = (id) => {
+  const isFavoriteHandler = (id: string) => {
     return (
       favoriteMusicState.filter((item) => item.id.videoId === id).length === 0
     );

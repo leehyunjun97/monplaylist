@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Input = ({ placeholder, className, value, onChange, onKeyDown }) => {
+const Input = ({ placeholder, className, value, onChange, onKeyDown }: any) => {
   return (
     <input
       placeholder={placeholder}
@@ -13,7 +13,7 @@ const Input = ({ placeholder, className, value, onChange, onKeyDown }) => {
   );
 };
 
-Input.Range = ({ className, min, max, step, value, color, onChange }) => {
+Input.Range = ({ className, min, max, step, value, color, onChange }: any) => {
   return (
     <input
       type='range'

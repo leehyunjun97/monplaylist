@@ -1,6 +1,13 @@
 import React from 'react';
 
-const Text = ({ children, className, style, fontSize, color, fontWeight }) => {
+const Text = ({
+  children,
+  className,
+  style,
+  fontSize,
+  color,
+  fontWeight,
+}: any) => {
   return (
     <p className={className} style={{ ...style, fontSize, color, fontWeight }}>
       {children}
@@ -8,7 +15,14 @@ const Text = ({ children, className, style, fontSize, color, fontWeight }) => {
   );
 };
 
-Text.Title = ({ children, className, style, fontSize, color, fontWeight }) => {
+Text.Title = ({
+  children,
+  className,
+  style,
+  fontSize,
+  color,
+  fontWeight,
+}: any) => {
   return (
     <h3 className={className} style={{ ...style, fontSize, color, fontWeight }}>
       {children}

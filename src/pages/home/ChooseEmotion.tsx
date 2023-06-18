@@ -9,6 +9,7 @@ import {
 import styles from './style/home.module.css';
 import Button from '../../components/common/Button/Button';
 import { useNavigate } from 'react-router-dom';
+import { IFeelingList } from '../../types/feelingList';
 
 const ChooseEmotion = () => {
   const [chooseEmotionState, setChooseEmotionState] =
@@ -18,7 +19,7 @@ const ChooseEmotion = () => {
 
   const navigate = useNavigate();
 
-  const feelingClickHandler = (item) => {
+  const feelingClickHandler = (item: IFeelingList) => {
     setChooseEmotionState({
       id: item.id,
       text: item.text,
@@ -29,7 +30,7 @@ const ChooseEmotion = () => {
     });
   };
 
-  const subFeelingClickHandler = (item) => {
+  const subFeelingClickHandler = (item: IFeelingList) => {
     setChooseEmotionState({
       ...chooseEmotionState,
       subList: {
@@ -39,7 +40,7 @@ const ChooseEmotion = () => {
     });
   };
 
-  const viewSubListHandler = (id) => {
+  const viewSubListHandler = (id: number) => {
     switch (id) {
       case 1:
         setSubEmotionList(excitingList);
@@ -56,14 +57,14 @@ const ChooseEmotion = () => {
     }
   };
 
-  const isActiveHandler = (text, itemText) => {
+  const isActiveHandler = (text: string, itemText: string) => {
     return text === itemText ? styles.isActive : styles.passive;
   };
 
   return (
     <div>
       <div className={styles.mainFeeling}>
-        {feelingMusicList.map((item) => (
+        {feelingMusicList.map((item: IFeelingList) => (
           <Button
             key={item.id}
             onClick={() => {
@@ -80,7 +81,7 @@ const ChooseEmotion = () => {
       </div>
 
       <div className={styles.subFeeling}>
-        {subEmotionListState.map((item) => (
+        {subEmotionListState.map((item: IFeelingList) => (
           <Button
             key={item.id}
             text={item.text}

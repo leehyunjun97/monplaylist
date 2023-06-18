@@ -14,7 +14,7 @@ const MusicPlayer = () => {
   return (
     <div className={styles.playerBar}>
       <Player
-        video={music.id.videoId ? music.id.videoId : null}
+        video={music.id.videoId ?? null}
         volume={musicState.volume}
         paused={!musicState.isPause}
         autoplay
@@ -52,7 +52,7 @@ const MusicPlayer = () => {
         step={0.02}
         value={musicState.volume}
         color={'white'}
-        onChange={(e) =>
+        onChange={(e: any) =>
           setMusicState({ ...musicState, volume: e.target.valueAsNumber })
         }
       />

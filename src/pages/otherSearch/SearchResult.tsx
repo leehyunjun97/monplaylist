@@ -28,8 +28,8 @@ const SearchResult = () => {
           placeholder={'PLAYLIST'}
           className={styles.searchInput}
           value={searchInputState}
-          onChange={(e) => setSearhInputState(e.target.value)}
-          onKeyDown={(e) => {
+          onChange={(e: any) => setSearhInputState(e.target.value)}
+          onKeyDown={(e: any) => {
             if (e.key === 'Enter') {
               setSearch(searchInputState);
             }

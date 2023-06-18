@@ -1,6 +1,7 @@
 import { atom } from 'recoil';
+import { IVideo } from '../../types/video';
 
-const playingMusic = atom({
+const playingMusic = atom<IVideo>({
   key: '#playingMusic',
   default: {
     kind: '',
