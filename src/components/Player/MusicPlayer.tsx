@@ -52,7 +52,7 @@ const MusicPlayer = () => {
         step={0.02}
         value={musicState.volume}
         color={'white'}
-        onChange={(e: any) =>
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           setMusicState({ ...musicState, volume: e.target.valueAsNumber })
         }
       />
