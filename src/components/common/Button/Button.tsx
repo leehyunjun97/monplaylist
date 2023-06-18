@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
-const Button = ({ text, className, onClick, icon }) => {
+const Button = ({ text, className, onClick, icon }: any) => {
   return (
     <button className={className} onClick={onClick}>
       {icon}
@@ -10,7 +10,14 @@ const Button = ({ text, className, onClick, icon }) => {
   );
 };
 
-Button.IconBtn = ({ text, className, onClick, icon, iconClassName, size }) => {
+Button.IconBtn = ({
+  text,
+  className,
+  onClick,
+  icon,
+  iconClassName,
+  size,
+}: any) => {
   return (
     <button className={className} onClick={onClick}>
       <FontAwesomeIcon icon={icon} className={iconClassName} size={size} />
