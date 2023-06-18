@@ -1,10 +1,22 @@
+import { IconProp, SizeProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
-const Button = ({ text, className, onClick, icon }: any) => {
+interface IBtnProps {
+  text?: React.ReactNode;
+  className?: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+}
+
+interface IIconBtnProps extends IBtnProps {
+  icon: IconProp;
+  iconClassName?: string;
+  size?: SizeProp;
+}
+
+const Button = ({ text, className, onClick }: IBtnProps) => {
   return (
     <button className={className} onClick={onClick}>
-      {icon}
       {text}
     </button>
   );
@@ -17,7 +29,7 @@ Button.IconBtn = ({
   icon,
   iconClassName,
   size,
-}: any) => {
+}: IIconBtnProps) => {
   return (
     <button className={className} onClick={onClick}>
       <FontAwesomeIcon icon={icon} className={iconClassName} size={size} />

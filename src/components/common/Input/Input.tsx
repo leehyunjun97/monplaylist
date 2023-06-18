@@ -1,6 +1,30 @@
 import React from 'react';
 
-const Input = ({ placeholder, className, value, onChange, onKeyDown }: any) => {
+interface IInputProps {
+  placeholder: string;
+  className: string;
+  value: string;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  onKeyDown: React.KeyboardEventHandler<HTMLInputElement>;
+}
+
+interface IRangeProps {
+  className: string;
+  min: number;
+  max: number;
+  step: number;
+  value: number;
+  color: string;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
+}
+
+const Input = ({
+  placeholder,
+  className,
+  value,
+  onChange,
+  onKeyDown,
+}: IInputProps) => {
   return (
     <input
       placeholder={placeholder}
@@ -13,7 +37,15 @@ const Input = ({ placeholder, className, value, onChange, onKeyDown }: any) => {
   );
 };
 
-Input.Range = ({ className, min, max, step, value, color, onChange }: any) => {
+Input.Range = ({
+  className,
+  min,
+  max,
+  step,
+  value,
+  color,
+  onChange,
+}: IRangeProps) => {
   return (
     <input
       type='range'
