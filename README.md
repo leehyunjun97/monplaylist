@@ -47,7 +47,11 @@ https://6485a185b6fff37b0e2efde1--monplay.netlify.app/
 
 <br />
 
-## 2. 구현
+## :pencil2: 구현
+
+#### 화면 구성
+- ``react-router-dom을 사용해 Page Routing을 했습니다.``
+- ``Header 태그와 Player태그 사이에 Outlet태그를 사용해 Header와 Player를 고정 시켰습니다.``
 
 #### 1. Choose Emotion
 - ``Recoil``을 사용해 ``Main Emotion List와 Sub Emotion List``의 상태를 관리해주었습니다.
@@ -66,6 +70,31 @@ https://6485a185b6fff37b0e2efde1--monplay.netlify.app/
 - ``filter로 찾은 List의 langth로 비교``
 
 #### 4. Player
-- <a href="https://www.npmjs.com/package/@u-wave/react-youtube" >Youtube Player</a>을 사용했습니다.
-- Player태그의 paused라는 인자는 boolean형을 받아 실행, 중지 할 수 있습니다.
-- 플레이리스트를 선택 시 Recoil에 music의 상태를 저장하고 실행하게 해주었습니다.
+- <a href="https://www.npmjs.com/package/@u-wave/react-youtube" >u-wave/react-youtube</a> 라이브러리를 사용했습니다.
+- ``Player태그의 paused라는 인자는 boolean형``을 받아 실행, 중지 할 수 있습니다.
+- ``display는 none``으로 화면은 안 보이도록 해 Player 느낌을 받을 수 있게 해주었습니다.
+- 플레이리스트를 선택 시 Recoil에 Music의 상태를 저장과 동시에 실행하게 해주었습니다.
+- Player의 ``볼륨 값을 Recoil state로 따로 관리``하였습니다.
+
+#### 5. 반응형 UI
+- ``CSS display의 grid방식``을 사용해 플레이리스트를 보여주었습니다.
+- ``@media를 사용해 max-width별로 값을 변경해주었습니다.``
+
+<br />
+
+## :blush: 느낀 점
+React를 배우고 처음 시작하는 프로젝트로써 하나부터 열까지 어려움이 있었다고 해도 과언이 아니었습니다. <br/>
+페이지를 라우팅하는거부터, 컴포넌트 나누는 것, 폴더 구조등 초반에는 어색했지만 하면서 점점 가속이 붙었던 것 같습니다. <br/>
+어느 정도 일정한 규칙같은 느낌이 있었던 것 같았습니다. ( ul, li, map, filter 등) <br/>
+Recoil 라이브러리를 알게 되면서 상태 관리 라이브러리의 장점의 대해서 많이 알게 된거 같습니다. <br />
+Youtube Player의 라이브러리도 여러 번 바꿔가면서 이 라이브러리도 한 리액트의 사용자가 만들어서 장 단점이 있고, <br/>
+내 프로젝트에 맞는 라이브러리가 있겠구나 라고 느꼈습니다. <br/>
+처음엔 jsx로 시작했지만, tsx로 변경하는 과정에서 타입을 지정해주면서 "왜 굳이 이렇게 까지 타입을 지정해서 써야되지" 의문을 가졌지만, <br />
+생각해보니 "여러 사람이 모여 프로젝트를 진행 할 때 이를 통해 유지보수가 더욱 쉽겠구나" 라고 느끼면서, <br />
+좀 더 타입스크립트의 이점을 이 프로젝트에 적용하지 못한 점이 아쉽게 느껴졌습니다. <br /><br/>
+중간중간 이유도 모르겠는 에러, 오타, api 하루 호출 제한, CSS 디자인 등 어려움이 있었지만,
+"개발자라면 누구나 겪는 일이지" 하고<br/>
+마인드컨트롤을 했던 것 같고, 해결 했을 떄에 뿌듯함으로 이겨냈던 것 같습니다.
+
+
+
