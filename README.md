@@ -13,7 +13,7 @@ https://6485a185b6fff37b0e2efde1--monplay.netlify.app/
 ## :books: 기술 스택
 
 > ``React.js`` ``TypeScript`` ``Recoil`` ``CSS`` <br />
-> ``Youtube API`` <a href="https://www.npmjs.com/package/@u-wave/react-youtube" >Youtube Player</a>
+> ``Youtube API``
 
 <br/>
 
