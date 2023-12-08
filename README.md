@@ -21,13 +21,13 @@ https://6485a185b6fff37b0e2efde1--monplay.netlify.app/
 
 #### 1. 분위기를 고를 수 있다. :point_down:
 
-- 신나는:smile: : ``드라이브`` ``아이돌`` ``노동요`` ``기분전환`` ``내적댄스``
-- 조용한:neutral_face:: ``혼자`` ``감성적`` ``집중`` ``인디`` ``잠잘 떄``
-- 날씨:cloud:: ``비오는 날`` ``화창한`` ``따뜻한`` ``흐린`` ``새벽``
+- 신나는 :smile: : ``드라이브`` ``아이돌`` ``노동요`` ``기분전환`` ``내적댄스``
+- 조용한 :neutral_face:: ``혼자`` ``감성적`` ``집중`` ``인디`` ``잠잘 떄``
+- 날씨 :cloud:: ``비오는 날`` ``화창한`` ``따뜻한`` ``흐린`` ``새벽``
 - ``메인 분위기를 고른 후 서브 분위기를 고를 수 있다.``
 - ``촏 12개의 Playlist를 제공 받을 수 있다.``
 
-#### 2. 맘에 드는 플레이리스트를 좋아요:heart: 할 수 있다.
+#### 2. 맘에 드는 플레이리스트를 좋아요 :heart: 할 수 있다.
 
 - ``MYPLAYLIST``에서 확인이 가능하다.
 - ``추가, 삭제`` 할 수 있다.
@@ -43,7 +43,7 @@ https://6485a185b6fff37b0e2efde1--monplay.netlify.app/
 
 #### 5. 반응형 UI :boom:
 
-- ``스마트폰, 태블릿, 모니터`` 다양한 디스플레이:pager:에서 사용 가능하다
+- ``스마트폰, 태블릿, 모니터`` 다양한 디스플레이에서 사용 가능하다
 
 <br />
 
@@ -51,7 +51,7 @@ https://6485a185b6fff37b0e2efde1--monplay.netlify.app/
 
 #### 화면 구성
 - ``react-router-dom을 사용해 Page Routing을 했습니다.``
-- ``Header 태그와 Player태그 사이에 Outlet태그를 사용해 Header와 Player를 고정 시켰습니다.``
+- ``Header태그와 Player태그 사이에 Outlet태그를 사용해 Header와 Player를 고정 시켰습니다.``
 
 #### 1. Choose Emotion
 - ``Recoil``을 사용해 ``Main Emotion List와 Sub Emotion List``의 상태를 관리해주었습니다.
