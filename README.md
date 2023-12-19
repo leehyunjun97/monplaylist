@@ -35,6 +35,8 @@ https://6485a185b6fff37b0e2efde1--monplay.netlify.app/
 - ``MYPLAYLIST``에서 확인이 가능하다.
 - ``추가, 삭제`` 할 수 있다.
 
+![myFavorite](https://github.com/leehyunjun97/monplaylist/assets/130208301/866d27f8-a1ac-47d4-91ff-a87e56a4cca2)
+
 #### 3. 검색 :mag:
 
 - 사용자가 ``원하는 키워드``와 관련된 플레이리스트를 받을 수 있다.
