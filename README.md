@@ -28,6 +28,8 @@ https://6485a185b6fff37b0e2efde1--monplay.netlify.app/
 - ``메인 분위기를 고른 후 서브 분위기를 고를 수 있다.``
 - ``촏 12개의 Playlist를 제공 받을 수 있다.``
 
+<br />
+
 ![chooseEmotion](https://github.com/leehyunjun97/monplaylist/assets/130208301/e93b4e0a-12be-4f20-b488-e40eac24d47f)
 
 #### 2. 맘에 드는 플레이리스트를 좋아요 :heart: 할 수 있다.
@@ -35,20 +37,36 @@ https://6485a185b6fff37b0e2efde1--monplay.netlify.app/
 - ``MYPLAYLIST``에서 확인이 가능하다.
 - ``추가, 삭제`` 할 수 있다.
 
+<br />
+
 ![myFavorite](https://github.com/leehyunjun97/monplaylist/assets/130208301/866d27f8-a1ac-47d4-91ff-a87e56a4cca2)
 
 #### 3. 검색 :mag:
 
 - 사용자가 ``원하는 키워드``와 관련된 플레이리스트를 받을 수 있다.
 
+<br />
+
+![search2](https://github.com/leehyunjun97/monplaylist/assets/130208301/6a76cd39-8f97-4adc-9256-14ef115e988a)
+
 #### 4. 플레이어 :headphones:
 
 - ``맘에 드는 플레이리스트를 선택 해 음악을 들을 수 있다.``
 - ``볼륨바, 재생, 정지``
 
+<br />
+
+![playerbar](https://github.com/leehyunjun97/monplaylist/assets/130208301/36bf83b7-af18-4600-92c4-e90de0e988fa)
+
 #### 5. 반응형 UI :boom:
 
 - ``스마트폰, 태블릿, 모니터`` 다양한 디스플레이에서 사용 가능하다
+
+<br />
+
+![반응형1](https://github.com/leehyunjun97/monplaylist/assets/130208301/e9fcfbee-cc30-4474-a6ad-1d3b85d54e61)
+![반응형2](https://github.com/leehyunjun97/monplaylist/assets/130208301/a035a619-cbcf-409b-b92b-a143001afeed)
+![반응형3](https://github.com/leehyunjun97/monplaylist/assets/130208301/cbca041d-ff66-46e7-beec-f6de712c4dee)
 
 <br />
 
