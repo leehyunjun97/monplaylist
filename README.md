@@ -2,6 +2,7 @@
 
 분위기에 맞는 음악 플레이리스트를 찾아 들을 수 있는 애플리케이션
 
+
 <br />
 
 ## :pager: 배포 페이지
@@ -26,6 +27,8 @@ https://6485a185b6fff37b0e2efde1--monplay.netlify.app/
 - 날씨 :cloud:: ``비오는 날`` ``화창한`` ``따뜻한`` ``흐린`` ``새벽``
 - ``메인 분위기를 고른 후 서브 분위기를 고를 수 있다.``
 - ``촏 12개의 Playlist를 제공 받을 수 있다.``
+
+![chooseEmotion](https://github.com/leehyunjun97/monplaylist/assets/130208301/e93b4e0a-12be-4f20-b488-e40eac24d47f)
 
 #### 2. 맘에 드는 플레이리스트를 좋아요 :heart: 할 수 있다.
 
