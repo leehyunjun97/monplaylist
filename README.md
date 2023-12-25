@@ -18,6 +18,45 @@ https://6485a185b6fff37b0e2efde1--monplay.netlify.app/
 
 <br/>
 
+## 구조
+
+```
+src
+├── assets
+├── components  
+│    ├── common
+│    │    ├── Button
+│    │    ├── Card
+│    │    ├── Input
+│    │    ├── Loading
+│    │    ├── Modal
+│    │    ├── Text
+│    │    ├── Toast
+│    │    ├── Ul
+│    ├── header
+│    ├── player
+├── hooks
+├── pages
+│    ├── home
+│    ├── myPlaylist
+│    ├── otherSearch
+│    ├── playlist
+│    ├── signup
+├── recoil
+│    ├── emotion
+│    ├── music
+│    ├── search
+├── services
+│    ├── youtube
+├── types
+├── utils
+├── App.tsx
+├── index.css
+├── index.tsx
+```
+
+<br />
+
 ## :eyes: 기능 및 UI
 
 #### 1. 분위기를 고를 수 있다. :point_down:
