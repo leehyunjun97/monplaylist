@@ -32,22 +32,22 @@ src
 │    │    ├── Modal
 │    │    ├── Text
 │    │    ├── Toast
-│    │    ├── Ul
+│    │    └── Ul
 │    ├── header
-│    ├── player
+│    └── player
 ├── hooks
 ├── pages
 │    ├── home
 │    ├── myPlaylist
 │    ├── otherSearch
 │    ├── playlist
-│    ├── signup
+│    └── signup
 ├── recoil
 │    ├── emotion
 │    ├── music
-│    ├── search
+│    └── search
 ├── services
-│    ├── youtube
+│    └── youtube
 ├── types
 ├── utils
 ├── App.tsx
