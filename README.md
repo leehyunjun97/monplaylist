@@ -16,45 +16,6 @@ https://6485a185b6fff37b0e2efde1--monplay.netlify.app/
 > ``React.js`` ``TypeScript`` ``Recoil`` ``CSS`` <br />
 > ``Youtube API``
 
-<br/>
-
-## 구조
-
-```
-src
-├── assets
-├── components  
-│    ├── common
-│    │    ├── Button
-│    │    ├── Card
-│    │    ├── Input
-│    │    ├── Loading
-│    │    ├── Modal
-│    │    ├── Text
-│    │    ├── Toast
-│    │    └── Ul
-│    ├── header
-│    └── player
-├── hooks
-├── pages
-│    ├── home
-│    ├── myPlaylist
-│    ├── otherSearch
-│    ├── playlist
-│    └── signup
-├── recoil
-│    ├── emotion
-│    ├── music
-│    └── search
-├── services
-│    └── youtube
-├── types
-├── utils
-├── App.tsx
-├── index.css
-├── index.tsx
-```
-
 <br />
 
 ## :eyes: 기능 및 UI
@@ -106,41 +67,6 @@ src
 ![반응형1](https://github.com/leehyunjun97/monplaylist/assets/130208301/e9fcfbee-cc30-4474-a6ad-1d3b85d54e61)
 ![반응형2](https://github.com/leehyunjun97/monplaylist/assets/130208301/a035a619-cbcf-409b-b92b-a143001afeed)
 ![반응형3](https://github.com/leehyunjun97/monplaylist/assets/130208301/cbca041d-ff66-46e7-beec-f6de712c4dee)
-
-<br />
-
-## :pencil2: 구현
-
-#### 화면 구성
-- ``react-router-dom을 사용해 Page Routing을 했습니다.``
-- ``Header태그와 Player태그 사이에 Outlet태그를 사용해 Header와 Player를 고정 시켰습니다.``
-
-#### 1. Choose Emotion
-- ``Recoil``을 사용해 ``Main Emotion List와 Sub Emotion List``의 상태를 관리해주었습니다.
-- 사용자가 Main을 골랐을 시 ``isActive로 걸 맞는 Sub List를 map``으로 뿌려주었습니다.
-
-#### 2. Youtube API 요청
-- ``Main Page의 Start Button``이나 ``Search input``를 통해 호출
-- ``axios``와 ``useQuery``를 사용해 Youtube API를 호출 했습니다.
-- ``Recoil의 Choose Emotion``의 상태가 업데이트 될 때마다 재 호출 했습니다.
-- ``cacheTime staleTime``을 사용해 호출 제한이 있는 API의 ``무분별한 호출을 방지``해주었습니다.
-
-#### 3. MyFavoriteList
-- 호출 받은 List의 Music Card위에 하트 버튼을 통해 추가, 삭제 되도록 했습니다.
-- 추가한 Music은 ``favorit이란 Recoil state``로 관리하였습니다.
-- 제공 받은 ``Youtube Card의 id와 state의 id를 비교해 하트를 빨간색으로 칠해주었습니다.``
-- ``filter로 찾은 List의 langth로 비교``
-
-#### 4. Player
-- <a href="https://www.npmjs.com/package/@u-wave/react-youtube" >u-wave/react-youtube</a> 라이브러리를 사용했습니다.
-- ``Player태그의 paused라는 인자는 boolean형``을 받아 실행, 중지 할 수 있습니다.
-- ``display는 none``으로 화면은 안 보이도록 해 Player 느낌을 받을 수 있게 해주었습니다.
-- 플레이리스트를 선택 시 Recoil에 Music의 상태를 저장과 동시에 실행하게 해주었습니다.
-- Player의 ``볼륨 값을 Recoil state로 따로 관리``하였습니다.
-
-#### 5. 반응형 UI
-- ``CSS display의 grid방식``을 사용해 플레이리스트를 보여주었습니다.
-- ``@media를 사용해 max-width별로 값을 변경해주었습니다.``
 
 <br />
 
