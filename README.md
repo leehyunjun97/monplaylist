@@ -7,7 +7,7 @@
 
 ## :pager: 배포 페이지
 
-https://6485a185b6fff37b0e2efde1--monplay.netlify.app/
+[https://monsterplaylist.netlify.app/](https://monsterplaylist.netlify.app/)
 
 <br/>
 
